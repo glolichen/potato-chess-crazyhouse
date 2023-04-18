@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sudo electron-builder --linux appimage
+sudo electron-builder --win portable
+sudo rm -rf dist/*-unpacked dist/*.yml dist/*.yaml
+sudo chown jayden dist/*
+sudo chown jayden dist
+sudo chgrp jayden dist/potato-chess-1.0.0.AppImage
+sudo chgrp jayden dist/"potato-chess 1.0.0.exe"
+sudo chgrp jayden dist
+mv dist/"potato-chess 1.0.0.exe" dist/potato-chess.exe
+mv dist/potato-chess-1.0.0.AppImage dist/potato-chess.AppImage
